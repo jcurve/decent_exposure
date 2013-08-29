@@ -18,11 +18,7 @@ module DecentExposure
     end
 
     def ancestor_scope
-      if plural?
-        controller.send(options[:ancestor]).send(inflector.plural)
-      else
-        controller.send(options[:ancestor])
-      end
+      controller.send(options[:ancestor]).send(inflector.plural)
     end
 
     def default_scope
